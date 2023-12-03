@@ -1,5 +1,6 @@
 ''' Solutions for both parts of Advent of Code Day One (https://adventofcode.com/2023/day/1) '''
 
+''' these answers are only valid for the puzzle set I was given '''
 PART_ONE_ANSWER = 54081
 PART_TWO_ANSWER = 54649
 DATA_FILE = 'src/files/day1.txt'
