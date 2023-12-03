@@ -1,7 +1,10 @@
 ''' Solutions for both parts of Advent of Code Day One (https://adventofcode.com/2023/day/1) '''
 
-digit_map = {v:str(i) for i,v in enumerate(['one','two','three','four','five','six','seven','eight','nine'],1)}
-max_depth = max(map(len, digit_map))
+PART_ONE_ANSWER = 54081
+PART_TWO_ANSWER = 54649
+
+DIGIT_MAP = {v:str(i) for i,v in enumerate(['one','two','three','four','five','six','seven','eight','nine'],1)}
+MAX_DEPTH = max(map(len, DIGIT_MAP))
 
 def extract_calibration_codes(s : str, max_depth : int) -> tuple[str, str] :
     ''' 
@@ -18,8 +21,8 @@ def extract_calibration_codes(s : str, max_depth : int) -> tuple[str, str] :
             if sub_str.isdigit():
                 digits.append(sub_str)
                 break
-            elif sub_str in digit_map:
-                digits.append(digit_map[sub_str])
+            elif sub_str in DIGIT_MAP:
+                digits.append(DIGIT_MAP[sub_str])
                 break
     return int(f'{digits[0]}{digits[-1]}')
 
@@ -33,13 +36,21 @@ def extract_calibration(s : str) -> int :
     digits = list(filter(lambda x : x.isdigit(), s))
     return int(f'{digits[0]}{digits[-1]}')
 
-digits_pt1 = []
-digits_pt2 = []
+if __name__ == '__main__':
+    
+    digits_pt1 = []
+    digits_pt2 = []
 
-with open('day1.txt','r') as f:
-    for x in f.readlines():
-        digits_pt1.append(extract_calibration(x))
-        digits_pt2.append(extract_calibration_codes(x, max_depth=max_depth))
+    with open('day1.txt','r') as f:
+        for x in f.readlines():
+            digits_pt1.append(extract_calibration(x))
+            digits_pt2.append(extract_calibration_codes(x, max_depth=MAX_DEPTH))
 
-print('AOC Day 1 Part One Sum: ', sum(digits_pt1))
-print('AOC Day 1 Part Two Sum: ', sum(digits_pt2))
+    solution_pt1 = sum(digits_pt1)
+    solution_pt2 = sum(digits_pt2)
+    
+    print('AOC Day 1 Part One Sum: ', solution_pt1)
+    print('AOC Day 1 Part Two Sum: ', solution_pt2)
+    
+    assert PART_ONE_ANSWER == solution_pt1
+    assert PART_TWO_ANSWER == solution_pt2
