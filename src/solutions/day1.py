@@ -2,6 +2,7 @@
 
 PART_ONE_ANSWER = 54081
 PART_TWO_ANSWER = 54649
+DATA_FILE = 'src/files/day1.txt'
 
 DIGIT_MAP = {v:str(i) for i,v in enumerate(['one','two','three','four','five','six','seven','eight','nine'],1)}
 MAX_DEPTH = max(map(len, DIGIT_MAP))
@@ -47,7 +48,7 @@ if __name__ == '__main__':
     digits_pt1 = []
     digits_pt2 = []
 
-    with open('day1.txt','r') as f:
+    with open(DATA_FILE,'r') as f:
         for x in f.readlines():
             digits_pt1.append(extract_calibration(x))
             digits_pt2.append(extract_calibration_codes(x, max_depth=MAX_DEPTH, digit_map=DIGIT_MAP))

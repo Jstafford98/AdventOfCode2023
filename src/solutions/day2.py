@@ -9,6 +9,8 @@ from functools import reduce
 '''
 SUM_IDS_ANSWER    = 2541
 SUM_POWERS_ANSWER = 66016
+DATA_FILE = 'src/files/day2.txt'
+
 CUBE_LIMITS = {
     'red'   : 12,
     'green' : 13,
@@ -89,7 +91,7 @@ def evalute_game(
 
 if __name__ == '__main__':
     
-    with open('day2.txt', 'r') as f:
+    with open(DATA_FILE, 'r') as f:
         
         valid_ids = []
         game_powers = []
