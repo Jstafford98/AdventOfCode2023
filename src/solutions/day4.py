@@ -120,7 +120,7 @@ if __name__ == '__main__':
     
     ''' count the total number of cards won '''
     cards_won = []
-    for _id,_ in enumerate(data):
+    for _id, _ in enumerate(data):
         cards_won.append(count_total_cards_won(id=_id, count_map=winnings_map))
     sum_instances = sum(cards_won)
     
